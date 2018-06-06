@@ -12,9 +12,18 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 
-app.get("/", function(req, res) {
-    res.send("Check one,two,three");
-  });
+app.get("/", function (req, res) {
+  res.sendFile(path.join(__dirname, "/index.html"));
+});
+
+
+app.get("/reservation", function (req, res) {
+  res.sendFile(path.join(__dirname, "/make.html"));
+});
+
+app.get("/check/reservation", function (req, res) {
+  res.sendFile(path.join(__dirname, "/view.html"));
+});
 
 
   // Listener
